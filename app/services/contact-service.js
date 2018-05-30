@@ -22,7 +22,7 @@ export class ContactService {
     }
 
     getContactByEmail(email) {
-        return this.http.get('/contact?email=' + email).map(response => {
+        return this.http.get('/contact?email=' + encodeURIComponent(email)).map(response => {
             var contact;
             try {
                 contact = prettifyContact(response.json());
