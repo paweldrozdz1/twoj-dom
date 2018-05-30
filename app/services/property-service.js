@@ -10,6 +10,7 @@ let prettifyProperty = (property) => {
     let prettyProperty = {
         id: property.sfid,
         title: property.title__c,
+        address: property.address__c,
         city: property.city__c,
         state: property.state__c,
         price: property.price__c,
