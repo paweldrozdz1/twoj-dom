@@ -1,7 +1,8 @@
-import {OnInit} from '@angular/core';
-import {Page, NavController} from 'ionic-angular';
-import {PropertyDetailsPage} from '../property-details/property-details';
-import {PropertyService} from '../../services/property-service';
+import { OnInit } from '@angular/core';
+import { Page, NavController } from 'ionic-angular';
+import { PropertyDetailsPage } from '../property-details/property-details';
+import { PropertyService } from '../../services/property-service';
+import { ContactService } from '../../services/contact-service';
 
 @Page({
     templateUrl: 'build/pages/favorite-list/favorite-list.html'
@@ -9,12 +10,13 @@ import {PropertyService} from '../../services/property-service';
 export class FavoriteListPage {
 
     static get parameters() {
-        return [[NavController], [PropertyService]];
+        return [[NavController], [PropertyService], [ContactService]];
     }
 
-    constructor(nav, propertyService) {
+    constructor(nav, propertyService, contactService) {
         this.nav = nav;
         this.propertyService = propertyService;
+        this.contactService = contactService;
     }
 
     ngOnInit() {
@@ -22,7 +24,7 @@ export class FavoriteListPage {
     }
 
     loadFavorites() {
-        this.propertyService.getFavorites().subscribe(favorites => this.favorites = favorites);
+        this.propertyService.getFavorites(this.contactService.CurrentContact.id).subscribe(favorites => this.favorites = favorites);
     }
 
     itemTapped(event, favorite) {

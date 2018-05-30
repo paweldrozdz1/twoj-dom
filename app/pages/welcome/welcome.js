@@ -1,4 +1,5 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import { Page, NavController, NavParams } from 'ionic-angular';
+import { ContactService } from '../../services/contact-service';
 
 @Page({
     templateUrl: 'build/pages/welcome/welcome.html'
@@ -6,11 +7,14 @@ import {Page, NavController, NavParams} from 'ionic-angular';
 export class WelcomePage {
 
     static get parameters() {
-        return [[NavController], [NavParams]];
+        return [[NavController], [NavParams], [ContactService]];
     }
 
-    constructor(nav, navParams) {
+    constructor(nav, navParams, contactService) {
         this.nav = nav;
+        this.contactService = contactService;
     }
 
+    ngOnInit() {
+    }
 }

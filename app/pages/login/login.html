@@ -1,0 +1,23 @@
+<ion-navbar primary hideBackButton *navbar>
+    <ion-title>Login</ion-title>
+</ion-navbar>
+
+<ion-content class="login">
+    <form (ngSubmit)="logForm()">
+        <div class="logo">
+            <img src="images/logo.png" />
+        </div>
+        <div class="error">
+            {{error}}
+        </div>
+        <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="loginForm.email" autofocus (change)="emailChanged()"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="loginForm.password" name="password"></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>Login</button>
+    </form>
+</ion-content>

@@ -1,0 +1,39 @@
+.login {
+
+    font-family: "Roboto Light";
+
+    form {
+        padding: 25px;
+        padding-top: 30px;
+
+        .error {
+            color: #aa0000;
+        }
+        
+        .item {
+            padding-left: 0;
+
+            .input-wrapper {
+                display: block;
+            }
+
+            .item-inner {
+                border: 0;
+            }
+            
+            ion-input {
+                border: 1px solid #c8c7cc;
+            }
+        }
+
+        .logo {
+            padding-bottom: 30px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 30px;
+        }
+    }
+
+}

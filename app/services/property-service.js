@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/Rx';
 
 /*
@@ -57,14 +57,18 @@ export class PropertyService {
         return this.http.get('/property/' + id).map(response => prettifyProperty(response.json()));
     }
 
-    getFavorites() {
-        return this.http.get('/favorite').map(response => response.json().map(prettifyFavorite));
+    getFavorites(contactId) {
+        return this.http.get('/favorite?contactid=' + contactId).map(response => response.json().map(prettifyFavorite));
     }
 
-    favorite(property) {
+    favorite(property, contactId) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/favorite', JSON.stringify({ 'property__c': property.id }), {headers: headers});
+        return this.http.post('/favorite',
+            JSON.stringify({
+                'property__c': property.id,
+                'contact__c': contactId
+            }), { headers: headers });
     }
 
     unfavorite(favorite) {

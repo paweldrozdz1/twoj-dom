@@ -8,6 +8,22 @@
 // By default each design mode includes these shared imports.
 // App Shared Sass variables belong in app.variables.scss.
 
+body {
+    background-color: black;
+}
+
+ion-app {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 40px;
+    width: 325px;
+    height: 90%;
+    max-height: 762px;
+}
 
 @font-face {
   font-family: "Roboto Light";
@@ -19,3 +35,5 @@
 @import "../pages/broker-details/broker-details";
 
 @import "../pages/welcome/welcome";
+
+@import "../pages/login/login";
