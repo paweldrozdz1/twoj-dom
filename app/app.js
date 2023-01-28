@@ -14,9 +14,9 @@ import { ActivityService } from './services/activity-service';
 
 @App({
     templateUrl: 'build/app.html',
-    config: {
-        mode: "ios"
-    },
+    //config: {
+    //    mode: "ios"
+    //},
     queries: {
         nav: new ViewChild('content')
     },
