@@ -4,7 +4,7 @@
   "keywords": [
     "app-cloud"
   ],
-  "repository": "https://github.com/gabesumner/dreamhouse-web-app",
+  "repository": "https://github.com/paweldrozdz1/twoj-dom",
   "addons": [
     "heroku-postgresql", 
     "herokuconnect"
