@@ -39,7 +39,7 @@ class MyApp {
             { title: 'Favorites', component: FavoriteListPage, icon: "star" }
         ];
 
-        this.rootPage = LoginPage;
+        this.rootPage = WelcomePage;
         this.initializeApp();
     }
 
